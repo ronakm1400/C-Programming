@@ -1,0 +1,69 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//		Problem Statement : Accept Character from user and check whether it is alphabet or not
+//					(A-Z or a-z)
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+typedef int BOOL;
+
+#define TRUE 1
+#define FALSE 0
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//		Function Name 	: CheckAlphabet
+//		Input 		: Accepts one character
+//		Output		: returns Boolean value
+//		Description	: This function accepts a single charachter from user and checks whether it is 
+//					alphabet or not. Returns true if it is an alphabet else returns false
+//		Author Name 	: Ronak Sunil Mutha
+//		Date		: 20/05/2023
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+BOOL CheckAlphabet(char cVal)
+{
+
+	if ( ((cVal >= 'A') && (cVal <= 'Z')) || ((cVal >= 'a') && (cVal <= 'z')) )
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//		Entry point function main
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main(int argc,char *argv[])
+{
+
+	auto char ch = '\0';
+	BOOL bRet = FALSE;
+
+	printf("\nEnter character of your choice : ");
+	scanf("%c",&ch);
+	
+	bRet = CheckAlphabet(ch);
+	
+	if(bRet == TRUE)
+	{
+		printf("\n%c is an alphabet\n",ch);
+	}
+	else
+	{
+		printf("\nIt is not an alphabet\n");
+	}
+	
+
+	return 0;
+
+}
