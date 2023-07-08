@@ -1,0 +1,67 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//										           		
+//	Problem Statement : Accept one number from user and check whether number is	greater than 100 or not	 				   
+//											   
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+												
+#include<stdio.h>					
+
+typedef int BOOL;
+#define TRUE 1
+#define FALSE 0
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//											    			
+//	  		Function Name : CheckGreater			      	     		    	
+//       	Input 		  : Accepts one integer				     	  	    
+//       	Output 		  : Return type integer				     	            
+//       	Description   : returns True if number is greater than 100 else 	            	 
+//			      			returns False summation of 		                    	  	 
+//       	Author 		  : Ronak Sunil Mutha				     	 	    
+// 	 		Date 		  : 04.05.2023					     		    	
+//											    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+BOOL CheckGreater(int iNo)
+{
+
+	if(iNo > 100)
+	{
+		return TRUE;
+	}
+	
+	else
+	{
+		return FALSE;	
+	}
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//				Entry Point Function Main 				    	
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+	
+	auto int iValue = 0;
+	auto BOOL bRet	= FALSE;
+		
+	printf("Enter Number : ");
+	scanf("%d",&iValue);
+	
+	bRet = CheckGreater(iValue);	
+	
+	if(bRet == TRUE)
+	{
+		printf("%d is greater than 100 \n",iValue);
+	}
+	
+	else
+	{
+		printf("%d is smaller than 100 \n",iValue);
+	}
+
+	return 0;
+
+}
