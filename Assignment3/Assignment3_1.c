@@ -1,0 +1,64 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//									
+// 				Problem Statement : Write a program which accepts number from user and display its 
+//								    multiplication of factors	
+//									
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//							     		 	
+//			 	Function Name : MultFact				     	 	
+//			 	Input 		  : Accepts one integer				     	 
+//			 	Output 		  : Returns integer 				    	 
+//			 	Description   : Prints multiplication of all factors of a number		                    	 
+//				Author 		  : Ronak Sunil Mutha				     	 
+//			 	Date 		  : 04.05.2023					     	 
+//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int MultFact(int iNo)
+{
+	auto int iMult = 1;	
+	register int iCnt = 0;
+	
+	if(iNo<0)
+	{
+		iNo = -iNo;
+	}
+	
+	for(iCnt = 1; iCnt <= (iNo/2); iCnt++)
+	{
+		if((iNo % iCnt) == 0)	
+		{
+			iMult = iMult * iCnt;	
+		}
+	
+	}
+	return iMult;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//											
+//				Entry Point Function main				
+//									
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main(int argc , char *argv[])
+{
+	auto int iValue = 0;
+	auto int iRet = 0;
+	
+	printf("Enter Number : ");
+	scanf("%d",&iValue);
+	
+	iRet = MultFact(iValue);
+	
+	printf("Multiplication of all factors is : %d\n",iRet);
+	
+	return 0;
+
+}
+
+// Time Complexity : O(N/2)
