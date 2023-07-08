@@ -1,0 +1,66 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//		Problem Statement : Accept character from user and check whether it is special symbol or not
+//					(!,@,#,$,%,^,&,*).		
+//					
+//					Input : %		Output : True
+//					Input : d		Output : False
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+typedef int BOOL;
+
+#define TRUE 1
+#define FALSE 0
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//		Function Name : CheckSpecial
+//		Input	      : accepts one character	
+//		Output	      : returns boolean value
+//		Description   : This function accepts character from user and check whether it is special symbol or 
+//					not if it is special symbol then it returns true else returns false
+//		Author Name   : Ronak Sunil Mutha
+//		Date	      : 20/05/2023	
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+BOOL CheckSpecial(char cVal)
+{
+	if ( (cVal >= '!') && (cVal <= '?') )
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//		Entry point function main
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main(int argc,char *argv[])
+{
+
+	auto char ch = '\0';
+	auto BOOL bRet = FALSE;
+	
+	printf("Please enter character of your choice : ");
+	scanf("%c",&ch);
+	
+	bRet = CheckSpecial(ch);	
+	if (bRet == TRUE)
+	{
+		printf("%c is a special character\n",ch);
+	}
+	else
+	{
+		printf("It is not a special character\n");
+	}
+	return 0;
+
+}
